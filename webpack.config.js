@@ -8,9 +8,9 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.p
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: './src/js/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist/'),
     filename: 'bundle.js'
   },
   module: {
@@ -21,7 +21,11 @@ module.exports = {
       {
         test: /\.pug$/,
         loader: 'pug-loader'
-      }
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline',
+    },
     ]
   },
   plugins: [

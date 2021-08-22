@@ -1,0 +1,5 @@
+import './Montserrat-Regular.woff'
+import './Montserrat-Regular.ttf'
+import './Montserrat-Bold.woff'
+import './Montserrat-Bold.ttf'
+import './fonts.scss'
