@@ -1,4 +1,47 @@
+@import './reset.scss';
+
+$maxWidth: 1440;
+@mixin adaptive-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+	@media (max-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+	}
+	@media (min-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+	}
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
 body {
+  @include adaptive-font(14, 10);
   font-family: 'Montserrat';
   font-weight: 400;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-title {
+  @include adaptive-font(24, 16);
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.title {
+  @include adaptive-font(19, 14);
+  line-height: 23px;
+  font-weight: 700;
+}
+
+.subtitle {
+  @include adaptive-font(12, 12);
+  line-height: 15px;
+  font-weight: 700;
 }
