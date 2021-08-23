@@ -1,6 +1,8 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const fs = require('fs')
 
 const PAGES_DIR = 'src/'
@@ -25,10 +27,15 @@ module.exports = {
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: 'asset/inline',
-    },
+      },
+      {
+        test: /\.(?:ico|gif|svg|png|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.css',
       chunkFilename: '[name].css'
@@ -36,6 +43,12 @@ module.exports = {
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
-    }))
+    })),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: "assets/img/*",
+        context: path.resolve(__dirname, "src"),
+      }, ],
+    })
   ]
 }
