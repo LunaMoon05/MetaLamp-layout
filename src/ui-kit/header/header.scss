@@ -1,1 +1,80 @@
 @import '../../scss/vars.scss';
+
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 30px;
+      margin: 0 21px;
+      background-color: $dark10;
+    }
+  }
+
+  &__btn {
+    padding: 4px 18px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__login {
+    margin-right: 21px;
+  }
+
+  &__text {
+    transition: .06s linear color;
+    color: $dark;
+    &_active {
+      font-weight: 700;
+    }
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__dropdown {
+    &-list {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &-btn {
+      display: flex;
+      align-items: center;
+      &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 11px;
+        margin-left: 4px;
+        background-position: center;
+        background-size: 13px;
+        background-image: url('../../assets//img/expand_more.svg');
+      }
+    }
+  }
+}

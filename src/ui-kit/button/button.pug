@@ -1,5 +1,5 @@
-mixin button(val, isFilled)
+mixin button(val, isFilled, ...classes)
   if isFilled
-    button.btn.btn_filled= val
+    button.btn.btn_filled(class=`${classes.join(' ')}`)= val
   else
-    button.btn= val
+    button.btn(class=`${classes.join(' ')}`)= val

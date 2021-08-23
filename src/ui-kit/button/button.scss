@@ -1,5 +1,21 @@
 @import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
 
 .btn {
-  background: $purpleGradient;
+  @include adaptive-font(12, 10);
+  border-radius: 22px;
+  text-transform: uppercase;
+  background: white;
+  border: 2px solid $purple;
+  color: $purple;
+  font-weight: 700;
+  transition: .07s linear opacity;
+  opacity: 1;
+  &:hover {
+    opacity: .5;
+  }
+  &_filled {
+    color: white;
+    background: $purpleGradient;
+  }
 }

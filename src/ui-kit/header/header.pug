@@ -1,33 +1,39 @@
 include ../button/button.pug
 
-mixin header(isAuth)    
-  if isAuth 
-    p isAuth
-  else 
-    +button('hello1', false)
-    +button('hello', true)
+mixin authBlock(isAuth)
+  .header__auth
+    if isAuth 
+      button.header__name.header__text Юлий Цезарь
+    else 
+      +button('Войти', false, 'header__login', 'header__btn')
+      +button('Зарегистрироваться', true, 'header__btn')
 
 header.header
   .container.header__container
     img.header__logo(src="./assets/img/logo.svg")
-    nav.header__nav
-      ul.header__list
-        li.header__item
-          a.header__link О нас
-        li.header__item.header__dropdown
-          button.header__dropdown-btn Услуги
-          ul.header__dropdown-list
-            li.header__dropdown-item
-              a.header__dropdown-link Услуга 1
-            li.header__dropdown-item
-              a.header__dropdown-link Услуга 2
-        li.header__item
-          a.header__link Вакансии
-        li.header__item.header__dropdown
-          button.header__dropdown-btn Соглашения
-          ul.header__dropdown-list
-            li.header__dropdown-item
-              a.header__dropdown-link Соглашение 1
-            li.header__dropdown-item
-              a.header__dropdown-link Соглашение 2
-          +header(false)
+    .header__content
+      nav.header__nav
+        ul.header__list
+          li.header__item
+            a.header__link.header__text.header__text_active(href="#") О нас
+          li.header__item.header__dropdown
+            button.header__dropdown-btn.header__text Услуги
+            ul.header__dropdown-list
+              li.header__dropdown-item
+                a.header__link.header__text(href="#") Услуга 1
+              li.header__dropdown-item
+                a.header__link.header__text(href="#") Услуга 2
+          li.header__item
+            a.header__link.header__text(href="#") Вакансии
+          li.header__item
+            a.header__link.header__text(href="#") Новости
+          li.header__item.header__dropdown
+            button.header__dropdown-btn.header__text Соглашения
+            ul.header__dropdown-list
+              li.header__dropdown-item
+                a.header__link.header__text(href="#") Соглашение 1
+              li.header__dropdown-item
+                a.header__link.header__text(href="#") Соглашение 2
+      +authBlock(true)
+      
+    
