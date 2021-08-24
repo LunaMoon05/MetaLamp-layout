@@ -1,8 +1,7 @@
 @import '../../scss/vars.scss';
-@import '../../scss/mixins.scss';
 
 .btn {
-  @include adaptive-font(12, 10);
+  font-size: 12px;
   border-radius: 22px;
   text-transform: uppercase;
   background: white;

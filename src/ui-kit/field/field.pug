@@ -1,0 +1,4 @@
+mixin field(type, placeholder, ...classes)
+  .field
+    input(type=`${type}` placeholder=`${placeholder}` class='' + classes.join(' ')).input
+    button.field__btn

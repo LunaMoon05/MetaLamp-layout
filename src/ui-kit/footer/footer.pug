@@ -1,0 +1,55 @@
+include ../field/field.pug
+
+footer.footer
+  .footer__top
+    .container.footer__container
+      .footer__col.footer__col-preview
+        img(src="./assets/img/logo.svg").footer__logo
+        p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      .footer__col.footer__col-nav
+        h4.footer__title навигация
+        ul.footer__list
+          li.footer__item
+            a.footer__link(href="#") О нас
+          li.footer__item
+            a.footer__link(href="#") Новости
+          li.footer__item
+            a.footer__link(href="#") Служба поддержки
+          li.footer__item
+            a.footer__link(href="#") Услуги
+      .footer__col.footer__col-about
+        h4.footer__title О нас
+        ul.footer__list
+          li.footer__item
+            a.footer__link(href="#") О сервисе
+          li.footer__item
+            a.footer__link(href="#") Наша команда
+          li.footer__item
+            a.footer__link(href="#") Вакансии
+          li.footer__item
+            a.footer__link(href="#") Инвесторы
+      .footer__col.footer__col-help
+        h4.footer__title Служба поддержки
+        ul.footer__list
+          li.footer__item
+            a.footer__link(href="#") Соглашения
+          li.footer__item
+            a.footer__link(href="#") Сообщества
+          li.footer__item
+            a.footer__link(href="#") Связь с нами
+      .footer__col
+        h4.footer__title Подписка
+        ul.footer__list
+          li.footer__item
+            p.footer__text Получайте специальные предложения и новости сервиса
+            +field('email', 'Email', 'footer__input')
+  .footer__bottom
+    .container.footer__container.footer__bottom-container
+      span.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
+      ul.footer__social
+        li.footer__social-item.footer__social-item_twitter
+          a.footer__social-link(href="#")
+        li.footer__social-item.footer__social-item_facebook
+          a.footer__social-link(href="#")
+        li.footer__social-item.footer__social-item_instagram
+          a.footer__social-link(href="#")
