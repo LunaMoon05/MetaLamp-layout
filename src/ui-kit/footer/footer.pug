@@ -1,4 +1,4 @@
-include ../field/field.pug
+include ../fields/fieldText/fieldText.pug
 
 footer.footer
   .footer__top
@@ -42,7 +42,7 @@ footer.footer
         ul.footer__list
           li.footer__item
             p.footer__text Получайте специальные предложения и новости сервиса
-            +field('email', 'Email', 'footer__input')
+            +fieldText('email', 'Email', 'footer__input')
   .footer__bottom
     .container.footer__container.footer__bottom-container
       span.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
